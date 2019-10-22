@@ -1,0 +1,11 @@
+<table class="table table-striped">
+  <tr>
+    <th>Nome</th>
+    <th>Cognome</th>
+    <th>Email</th>
+    <th>Nascita</th>
+    <th></th>
+  </tr>
+  <tr app-user *ngFor="let user of users" [user-data] = 'user' (onDeleteUser)="onDeleteUser($event)">
+  </tr>
+</table>
