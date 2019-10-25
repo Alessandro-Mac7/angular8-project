@@ -3,13 +3,7 @@
 <td>{{user.email}}</td>
 <td>{{user.date}}</td>
 <td>
-  <div class="row">
-    <div class="col-sm-6">
-      <button class="btn btn-warning">Update</button>
-    </div>
-    <div class="col-sm-6">
-      <button class="btn btn-danger" (click) ="deleteUser()">Delete</button>
-    </div>
-  </div>
-
+  <app-button [config]="bookingButton" ></app-button>
+  <app-button [config]="updateButton" (click)="updateUser()" ></app-button>
+  <app-button [config]="deleteButton" (click)="deleteUser()"></app-button>
 </td>

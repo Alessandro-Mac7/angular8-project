@@ -1,0 +1,21 @@
+<div class="table-responsive-md" >
+<table class="table table-striped">
+  <tr >
+    <ng-container *ngFor="let header of dataHeader">
+      <th>{{header.value}}</th>
+    </ng-container>
+  </tr>
+  <tr *ngFor="let source of dataSource">
+    <ng-container *ngFor="let key of keys(source)">
+      <td>{{source[key]}}</td>
+    </ng-container>
+    <ng-container *ngIf="buttonConfig !== undefined">
+      <td>
+        <ng-container *ngFor="let config of buttonConfig">
+          <app-button [config]="config" ></app-button>
+        </ng-container>
+      <td>
+    </ng-container>
+  </tr>
+</table>
+</div>

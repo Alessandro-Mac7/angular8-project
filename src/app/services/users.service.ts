@@ -1,41 +1,31 @@
 import {Injectable} from '@angular/core';
-import {User} from '../interfaces/user';
+import {User} from '../classes/User';
+import {IUser} from '../interfaces/IUser';
+import {HttpClient} from '@angular/common/http';
+import {IServiceREST} from '../interfaces/IServiceREST';
 
 @Injectable()
-export class UsersService {
+export class UsersService  implements IServiceREST {
 
-  users: Array<User> = [
-    {
-      name: 'Alessandro',
-      lastName: 'Macrì',
-      email: 'alessandro.macri95@gmail.com',
-      date: '13/06/1995'
-    }, {
-      name: 'Antonio',
-      lastName: 'Macrì',
-      email: 'antonio.macri95@gmail.com',
-      date: '13/06/1995'
-    }, {
-      name: 'Giuseppe',
-      lastName: 'Macrì',
-      email: 'giuseppe.macri95@gmail.com',
-      date: '13/06/1995'
-    }, {
-      name: 'Maria',
-      lastName: 'Macrì',
-      email: 'maria.macri95@gmail.com',
-      date: '13/06/1995'
-    }
-  ];
+  users: Array<User> = [];
+  private apiURL = 'http://localhost:3000/user'
 
-  getUsers() {
-    return this.users;
+  constructor(private http: HttpClient) {
   }
 
-  deleteUser(user){
-    let index = this.users.indexOf(user);
-    if(index >= 0){
-      this.users.splice(index,1);
-    }
+  getAll() {
+    return this.http.get (this.apiURL);
+  }
+  get(id: number) {
+    return this.http.get(this.apiURL + '/' + id);
+  }
+  delete(id: number) {
+    return this.http.delete(this.apiURL + '/' + id, {});
+  }
+  save(model: any) {
+    return this.http.post(this.apiURL, model);
+  }
+  update(model: any) {
+    return this.http.put(this.apiURL + '/' + model.id, model);
   }
 }

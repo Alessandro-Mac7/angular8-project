@@ -1,11 +1,30 @@
-<table class="table table-striped">
-  <tr>
-    <th>Nome</th>
-    <th>Cognome</th>
-    <th>Email</th>
-    <th>Nascita</th>
-    <th></th>
-  </tr>
-  <tr app-user *ngFor="let user of users" [user-data] = 'user' (onDeleteUser)="onDeleteUser($event)">
-  </tr>
-</table>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h3>Users</h3>
+  </div>
+</div>
+
+<div class="row justify-content-md-center">
+  <div class="col-md-8 col-md-offset-2">
+    <app-table [dataHeader]="header" [dataSource]="source" [buttonConfig]="config"></app-table>
+  </div>
+</div>
+
+<div class="row justify-content-md-center">
+  <div class="col-md-8 col-md-offset-2">
+    <table class="table table-striped">
+      <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Email</th>
+        <th>Nascita</th>
+        <th></th>
+      </tr>
+      <tr app-user *ngFor="let user of users" [user-data] = 'user' (onDeleteUser)="onDeleteUser($event)"
+          (onSelectedUser)="onSelectedUser($event)">
+      </tr>
+    </table>
+  </div>
+</div>
+
+

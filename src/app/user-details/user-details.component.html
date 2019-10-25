@@ -1,1 +1,37 @@
-<p>user-details works!</p>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h3>Add user</h3>
+  </div>
+</div>
+<div class="row justify-content-md-center">
+  <div class="col-md-4 col-md-offset-4">
+    <form>
+      <input type="hidden" name="id" [(ngModel)]="user.id">
+      <div class="form-group">
+        <input type="text" class="form-control" id="name" [(ngModel)]="user.name" name="name" placeholder="Inserisci nome">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="lastName"  [(ngModel)]="user.lastName" name="lastName" placeholder="Inserisci cognome">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" id="email"  [(ngModel)]="user.email" name="email" placeholder="Inserisci email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password"  [(ngModel)]="user.password" name="password" placeholder="Inserisci password">
+      </div>
+      <div class="form-group">
+        <input type="date" class="form-control"  [(ngModel)]="user.date" name="date" id="date">
+      </div>
+      <div class="form-group">
+        <input type="number" min="1" max="2" class="form-control"  [(ngModel)]="user.typology" name="typology" id="typology">
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-md-12 text-center">
+          <app-button [config]="saveButton" (click)="saveUser()"></app-button>
+          <app-button [config]="resetButton" (click)="resetForm()" ></app-button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
