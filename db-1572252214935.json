@@ -1,0 +1,56 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Alessandro",
+      "lastName": "Macrì",
+      "email": "alessandro.macri95@gmail.com",
+      "password": "ciao",
+      "date": "13-06-1995",
+      "typology": 1
+    },
+    {
+      "id": 2,
+      "name": "Giovanni",
+      "lastName": "Cosentino",
+      "email": "giovanni.cosentino@gmail.com",
+      "password": "ciao",
+      "date": "11-07-1994",
+      "typology": 2
+    }
+  ],
+  "vehicle": [
+    {
+      "id": 1,
+      "uniqueId": "FA1234CZ",
+      "carRegistration": "13-12-2018",
+      "manufacturer": "Audi",
+      "model": "Q3",
+      "category": "SUV"
+    },
+    {
+      "id": 2,
+      "uniqueId": "FB5647GS",
+      "carRegistration": "22-09-2019",
+      "manufacturer": "Audi",
+      "model": "SQU",
+      "category": "Sport SUV"
+    }
+  ],
+  "booking": [
+    {
+      "id": 1,
+      "endDate": "30-10-2019",
+      "startDate": "28-10-2019",
+      "user": 2,
+      "vehicle": 1
+    },
+    {
+      "id": 1,
+      "endDate": "31-10-2019",
+      "startDate": "03-11-2019",
+      "user": 2,
+      "vehicle": 2
+    }
+  ]
+}

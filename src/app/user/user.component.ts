@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {IButton} from '../interfaces/IButton';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'tr[app-user]',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']

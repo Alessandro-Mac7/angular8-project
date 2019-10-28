@@ -6,25 +6,6 @@
 
 <div class="row justify-content-md-center">
   <div class="col-md-8 col-md-offset-2">
-    <app-table [dataHeader]="header" [dataSource]="source" [buttonConfig]="config"></app-table>
+    <app-table [searchBar]="true" [dataHeader]="header" [dataSource]="source" [buttonConfig]="config" (onClickAction)="handle($event)"></app-table>
   </div>
 </div>
-
-<div class="row justify-content-md-center">
-  <div class="col-md-8 col-md-offset-2">
-    <table class="table table-striped">
-      <tr>
-        <th>Nome</th>
-        <th>Cognome</th>
-        <th>Email</th>
-        <th>Nascita</th>
-        <th></th>
-      </tr>
-      <tr app-user *ngFor="let user of users" [user-data] = 'user' (onDeleteUser)="onDeleteUser($event)"
-          (onSelectedUser)="onSelectedUser($event)">
-      </tr>
-    </table>
-  </div>
-</div>
-
-

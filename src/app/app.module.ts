@@ -15,6 +15,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { ButtonComponent } from './button/button.component';
 import { TableComponent } from './table/table.component';
+import { FilterPipe } from './table/filter.pipe';
 
 const routes: Routes = [
     {
@@ -42,7 +43,8 @@ const routes: Routes = [
     NavComponent,
     ModalComponent,
     ButtonComponent,
-    TableComponent
+    TableComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

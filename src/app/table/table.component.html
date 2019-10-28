@@ -1,21 +1,29 @@
-<div class="table-responsive-md" >
-<table class="table table-striped">
-  <tr >
-    <ng-container *ngFor="let header of dataHeader">
-      <th>{{header.value}}</th>
-    </ng-container>
-  </tr>
-  <tr *ngFor="let source of dataSource">
-    <ng-container *ngFor="let key of keys(source)">
-      <td>{{source[key]}}</td>
-    </ng-container>
-    <ng-container *ngIf="buttonConfig !== undefined">
-      <td>
-        <ng-container *ngFor="let config of buttonConfig">
-          <app-button [config]="config" ></app-button>
+<div class="table-responsive-md mt-2" >
+  <ng-container *ngIf="searchBar !== false">
+    <input class="form-control" type="text" [(ngModel)]="query"  placeholder="&#F002; Cerca in tabella..." >
+  </ng-container>
+
+  <table class="table table-hover mt-2">
+    <thead class="thead-dark">
+      <tr >
+        <ng-container *ngFor="let header of dataHeader">
+          <th>{{header.value}}</th>
         </ng-container>
-      <td>
-    </ng-container>
-  </tr>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let source of dataSource | filter : query">
+        <ng-container *ngFor="let header of dataHeader">
+          <td *ngIf="header.key !== 'action'" >{{source[header.key]}}</td>
+        </ng-container>
+        <ng-container *ngIf="buttonConfig !== undefined">
+          <td>
+            <ng-container *ngFor="let config of buttonConfig">
+              <app-button [config]="config" (click)="onClickAction(config.action, source)"></app-button>
+            </ng-container>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
 </table>
 </div>
