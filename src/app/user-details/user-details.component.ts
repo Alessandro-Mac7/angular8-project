@@ -66,7 +66,7 @@ export class UserDetailsComponent implements OnInit {
         response => alert('ok'));
       this.router.navigate(['users']);
     } else {
-      this.user.assignId();
+      console.log(this.user.id)
       this.createUser(this.user);
     }
 

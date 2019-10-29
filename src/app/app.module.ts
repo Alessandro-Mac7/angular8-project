@@ -16,6 +16,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { ButtonComponent } from './button/button.component';
 import { TableComponent } from './table/table.component';
 import { FilterPipe } from './table/filter.pipe';
+import {BookingsService} from './services/bookings.service';
+import {PagerService} from './services/pager.service';
+import {VehiclesService} from './services/vehicles.service';
 
 const routes: Routes = [
     {
@@ -54,7 +57,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [UsersService],
+  providers: [UsersService, BookingsService, PagerService, VehiclesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

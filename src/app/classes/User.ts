@@ -11,7 +11,6 @@ export class User implements IUser {
   typology: number;
 
   constructor() {
-    this.id = undefined;
     this.name = '';
     this.email = '';
     this.date = '';

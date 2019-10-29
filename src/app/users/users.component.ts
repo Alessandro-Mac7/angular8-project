@@ -77,6 +77,7 @@ export class UsersComponent implements OnInit {
         }
       );
     }
+
   }
 
   editUser(user: User) {

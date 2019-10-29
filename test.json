@@ -17,6 +17,42 @@
       "password": "ciao",
       "date": "11-07-1994",
       "typology": 2
+    },
+    {
+      "id": 8,
+      "name": "Antonio",
+      "email": "antonio.serra@gmail.com",
+      "date": "1989-07-31",
+      "lastName": "Serra",
+      "password": "ciao",
+      "typology": 2
+    },
+    {
+      "name": "Matteo",
+      "email": "laboccetta@libero.it",
+      "date": "1912-12-12",
+      "lastName": "Boccetta",
+      "password": "ciao",
+      "typology": 2,
+      "id": 10
+    },
+    {
+      "name": "Francesco",
+      "email": "francesco.cili@gmail.com",
+      "date": "1978-08-02",
+      "lastName": "Curcio",
+      "password": "ciao",
+      "typology": 2,
+      "id": 11
+    },
+    {
+      "name": "Silvio",
+      "email": "silvio.gargano@libero.it",
+      "date": "1978-05-04",
+      "lastName": "Gargano",
+      "password": "cacca",
+      "typology": 2,
+      "id": 12
     }
   ],
   "vehicle": [
